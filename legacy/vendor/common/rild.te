@@ -56,10 +56,8 @@ netmgr_socket(rild);
 use_vendor_per_mgr(rild);
 
 #diag
-userdebug_or_eng(`
-    diag_use(rild)
-    get_prop(rild, vendor_pd_locater_dbg_prop)
-')
+diag_use(rild)
+get_prop(rild, vendor_pd_locater_dbg_prop)
 
 allow rild self:qipcrtr_socket create_socket_perms_no_ioctl;;
 allow rild self:{ socket qipcrtr_socket } ioctl;

@@ -43,6 +43,7 @@ ctl.vendor.netmgrd                u:object_r:vendor_ctl_vendor_netmgrd_prop:s0
 ctl.vendor.port-bridge            u:object_r:vendor_ctl_vendor_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:vendor_ctl_qcrild_prop:s0
 ctl.vendor.ril-daemon             u:object_r:vendor_ctl_vendor_rild_prop:s0
+persist.vendor.sys.modem.diag.    u:object_r:vendor_modem_diag_prop:s0
 ctl.vendor.cnd                    u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.sys.cnd            u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cne.               u:object_r:vendor_cnd_vendor_prop:s0
@@ -82,6 +83,7 @@ vendor.perf.iop_v3.enable.debug u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
 vendor.qti.izat.           u:object_r:vendor_location_prop:s0
+vendor.sys.modem.diag.     u:object_r:vendor_modem_diag_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
 vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0

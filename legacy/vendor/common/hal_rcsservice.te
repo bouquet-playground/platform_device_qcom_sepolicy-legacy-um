@@ -54,16 +54,12 @@ wakelock_use(hal_rcsservice)
 allow hal_rcsservice self:capability net_bind_service;
 
 #diag
-userdebug_or_eng(`
-  diag_use(hal_rcsservice)
-')
+diag_use(hal_rcsservice)
 
 allow hal_rcsservice self:capability2 wake_alarm;
 allow hal_rcsservice sysfs_data:file r_file_perms;
 binder_call(hal_rcsservice, vendor_dataservice_app)
-userdebug_or_eng(`
-  binder_call(hal_rcsservice, radio)
-')
+binder_call(hal_rcsservice, radio)
 
 set_prop(hal_rcsservice, vendor_ctl_vendor_imsrcsservice_prop)
 set_prop(hal_rcsservice, vendor_qcom_ims_prop)

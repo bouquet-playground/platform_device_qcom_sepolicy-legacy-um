@@ -67,7 +67,6 @@ allow wcnss_service sysfs_data:file r_file_perms;
 # allow access to network performance tuner
 unix_socket_connect(wcnss_service, wigignpt, wigignpt)
 
-userdebug_or_eng(`
 allow wcnss_service fuse:dir create_dir_perms;
 allow wcnss_service fuse:file create_file_perms;
 allow wcnss_service vfat:dir create_dir_perms;
@@ -81,7 +80,6 @@ r_dir_file(wcnss_service, proc_wifi_dbg)
 r_dir_file(wcnss_service, storage_file)
 r_dir_file(wcnss_service, mnt_user_file)
 diag_use(wcnss_service)
-')
 
 #binder_use(wcnss_service)
 use_vendor_per_mgr(wcnss_service)

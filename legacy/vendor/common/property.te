@@ -44,6 +44,7 @@ type vendor_dataadpl_prop, property_type;
 type vendor_dataqdp_prop, property_type;
 type vendor_ipacm_prop, property_type;
 type vendor_ipacm-diag_prop, property_type;
+type vendor_modem_diag_prop, property_type;
 type vendor_cnd_vendor_prop, property_type;
 type vendor_sensors_prop, property_type;
 type vendor_slpi_prop, property_type;

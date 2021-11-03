@@ -38,9 +38,7 @@ get_prop(hal_imsrtp, hwservicemanager_prop)
 add_hwservice(hal_imsrtp, hal_imsrtp_hwservice)
 
 #diag
-userdebug_or_eng(`
-  diag_use(hal_imsrtp)
-')
+diag_use(hal_imsrtp)
 
 allow hal_imsrtp self:{ socket qipcrtr_socket } create_socket_perms;
 

@@ -64,13 +64,11 @@ allow qlogd fuse:file create_file_perms;
 allow qlogd kernel:system syslog_mod;
 
 # need for qdss log and odl from UI
-userdebug_or_eng(`
-  allow qlogd { debugfs_tracing qdss_device }:file r_file_perms;
-  allow qlogd { qdss_device }:file r_file_perms;
-  r_dir_file(qlogd, storage_file)
-  r_dir_file(qlogd, mnt_user_file)
-  diag_use(qlogd)
-')
+allow qlogd { debugfs_tracing qdss_device }:file r_file_perms;
+allow qlogd { qdss_device }:file r_file_perms;
+r_dir_file(qlogd, storage_file)
+r_dir_file(qlogd, mnt_user_file)
+diag_use(qlogd)
 
 # need for capture adb logs
 unix_socket_connect(qlogd, logdr, logd)
@@ -82,3 +80,13 @@ allow qlogd ramdump_device:chr_file { setattr rw_file_perms };
 # need for qxdm log
 allow qlogd diag_exec:file rx_file_perms;
 wakelock_use(qlogd)
+
+allow qlogd diag_device:chr_file rw_file_perms;
+
+allow qlogd vendor_radio_data_file:file create_file_perms;
+allow qlogd vendor_radio_data_file:dir create_dir_perms;
+
+set_prop(qlogd, vendor_modem_diag_prop)
+
+allow qlogd self:socket create_socket_perms;
+allowxperm qlogd self:socket ioctl msm_sock_ipc_ioctls;

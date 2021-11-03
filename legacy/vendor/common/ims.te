@@ -72,9 +72,7 @@ netmgr_socket(ims);
 allow ims radio:fd use;
 
 #diag
-userdebug_or_eng(`
-    diag_use(ims)
-')
+diag_use(ims)
 allow ims self:{ socket udp_socket } ioctl;
 # ioctlcmd=c302
 allowxperm ims self:socket ioctl msm_sock_ipc_ioctls;
