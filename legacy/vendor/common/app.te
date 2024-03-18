@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Allow all apps to open and send ioctl to qdsp device
 allow appdomain qdsp_device:chr_file r_file_perms;
@@ -42,3 +46,6 @@ allow appdomain npu_device:chr_file r_file_perms;
 
 # Allow reading camera props
 get_prop(appdomain, camera_prop)
+
+#Allow all apps to have read access to vendor_display_prop
+get_prop(appdomain, vendor_display_prop)
